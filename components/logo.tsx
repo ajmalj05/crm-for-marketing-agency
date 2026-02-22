@@ -41,7 +41,7 @@ export function Logo({ size = "sm", link = true, className }: LogoProps) {
 
   if (link) {
     return (
-      <Link href="/" className="flex items-center focus:outline-none">
+      <Link href="/dashboard" className="flex items-center focus:outline-none">
         {content}
       </Link>
     );

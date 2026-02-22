@@ -21,5 +21,5 @@ export async function loginAction(
   }
 
   await setSession();
-  redirect("/");
+  redirect("/dashboard");
 }

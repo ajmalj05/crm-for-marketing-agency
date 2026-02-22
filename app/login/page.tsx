@@ -10,7 +10,7 @@ export const metadata = {
 
 export default async function LoginPage() {
   const isAuth = await getSession();
-  if (isAuth) redirect("/");
+  if (isAuth) redirect("/dashboard");
 
   return (
     <div className="login-root min-h-screen bg-gray-100 flex flex-col pb-[env(safe-area-inset-bottom)]">
