@@ -1,0 +1,16 @@
+# Local MongoDB for development. Prisma requires a replica set for writes (P2031).
+# Usage:
+#   1. docker compose up -d
+#   2. One-time init: docker compose exec mongo mongosh --eval "rs.initiate({_id:'rs0',members:[{_id:0,host:'localhost:27017'}]})"
+#   3. Set DATABASE_URL=mongodb://localhost:27017/growith-arm?authSource=admin (or with user/pass if needed)
+version: "3"
+services:
+  mongo:
+    image: mongo:7
+    command: ["--replSet", "rs0", "--bind_ip_all"]
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+volumes:
+  mongo_data:
