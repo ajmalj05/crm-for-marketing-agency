@@ -1,4 +1,7 @@
 {
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
   "redirects": [
     { "source": "/", "destination": "/login", "permanent": false }
   ]
